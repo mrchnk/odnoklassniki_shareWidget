@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Odnoklassniki shareWidget Test</h1>
+		<div id="ok_shareWidget"></div>
+		<script>
+		!function (d, id, did, st) {
+		  var js = d.createElement("script");
+		  js.src = "http://connect.ok.ru/connect.js";
+		  js.onload = js.onreadystatechange = function () {
+		  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+			if (!this.executed) {
+			  this.executed = true;
+			  setTimeout(function () {
+				OK.CONNECT.insertShareWidget(id,did,st);
+			  }, 0);
+			}
+		  }};
+		  d.documentElement.appendChild(js);
+		}(document,"ok_shareWidget",document.URL,"{width:165,height:35,st:'oval',sz:30,ck:1}");
+		</script>
+	</body>
+</html>
